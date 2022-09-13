@@ -1,9 +1,10 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
+import  {useNavigate}  from 'react-router-dom';
 
 
-const Signup = () => {
+const Signup = ({setUser}) => {
     
-  
+    let navigate = useNavigate()
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
@@ -21,37 +22,54 @@ const Signup = () => {
           password_confirmation: passwordConfirmation,
         }),
       })
-        .then((r) => r.json())
+      .then((r) => {
+          if (r.ok){
+            fetch("/login", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                username,
+                password,
+              }),
+            })
+            .then((r) => r.json())
+            .then((user) => setUser(user))
+            navigate("/homepage")
+          }
+        })
+        
         
     }
   
     return (
-      <div className="signUp">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Username:</label>
-        <input
-          type="text"
-          id="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <label htmlFor="password_confirmation">Confirm Password:</label>
-        <input
-          type="password"
-          id="password_confirmation"
-          value={passwordConfirmation}
-          onChange={(e) => setPasswordConfirmation(e.target.value)}
-        />
-        <button type="submit">Submit</button>
-      </form>
-      </div>
+      <div className="formContainer">
+        <form onSubmit={handleSubmit}>
+            <label htmlFor="username">Username:</label>
+              <input
+                type="text"
+                id="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            <label htmlFor="password">Password:</label>
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            <label htmlFor="password_confirmation">Confirm Password:</label>
+              <input
+                type="password"
+                id="password_confirmation"
+                value={passwordConfirmation}
+                onChange={(e) => setPasswordConfirmation(e.target.value)}
+              />
+            <button type="submit">Submit</button>
+      </form> 
+    </div>
     );
   
 }

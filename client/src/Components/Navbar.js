@@ -1,20 +1,22 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 
-const Navbar = () => {
 
-  function handleLogOut(){
-    fetch('/sessions', {
-      method: 'DELETE',
-      headers: {
-        'Content-type': 'application/json'
-    }
-    })
+
+const Navbar = ({user, handleLogOut}) => {
+
+
+
+
+
+  if (user){
+    return (
+      <NavLink to="/myProfile">{user.username}</NavLink>
+      
+    )
+  } else {
+    return <div></div>
   }
-
-
-  return (
-    <button onClick={handleLogOut}>Logout?</button>
-  )
 }
 
 export default Navbar

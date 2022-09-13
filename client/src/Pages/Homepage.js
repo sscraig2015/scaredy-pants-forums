@@ -1,19 +1,34 @@
-import React from 'react'
-import SignIn from './SignIn'
+import React, {useState} from 'react'
+import NewPost from '../Components/NewPost'
+
 
 const Homepage = ({user, handleLogOut}) => {
   
-console.log(user)
-if (user) {
-  return (
+    const [newPost, setNewPost] = useState(false)
+    const [posts, setPosts] = useState([])
+
+    function revealNewPost(){
+        setNewPost(!newPost)
+    }
+
+    
+
+    if (user) {
+    return (
+                <div>
+
+                    <button onClick={revealNewPost}>New Post</button>
+                    {newPost ? <NewPost /> : null}
+                </div>
+        
+            )  
+    } else {
+        return (
             <div>
-                {user.username}
+                Loading...
             </div>
-       
-        )  
-} else {
-    return <SignIn />
-}
+        )
+    }
 
 }
 export default Homepage
