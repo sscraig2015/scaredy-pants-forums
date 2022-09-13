@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const NewPost = () => {
+const NewPost = ({setPosts, currentPosts}) => {
   
     const [topic, setTopic] = useState("")
     const [topicText, setTopicText] = useState("")
@@ -16,13 +16,15 @@ const NewPost = () => {
             body: JSON.stringify({
                 title: topic,
                 body: topicText,
-            })
+            })  
         })
+        .then((r) => r.json())
+        .then((post) => setPosts(post, ...currentPosts))
     }
     
     return (
     <div>
-        <form onSubmit={newPost}>
+        <form id='formReset' onSubmit={newPost}>
             <label>Title:</label>
             <input
               type="text"

@@ -37,3 +37,51 @@ button:hover {
   margin-left: 20%;
   margin-right: 20%;
 }
+
+.navBar{
+  text-align: right;
+  margin-top: 3%;
+}
+
+
+
+.homePage {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+  gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.homePage > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.newPostForm {
+  grid-area: menu;
+  margin-left: 10%;
+
+}
+
+.content {
+
+  grid-area: main;
+
+}
+
+.individualPost{
+  border: 1px solid rgb(0, 0, 0);
+  margin: 2px 0px 0px 10px;
+  padding: 0px;
+}
+
+.individualPostContent{
+  margin: 2px 0px 0px 10px;
+
+}
+

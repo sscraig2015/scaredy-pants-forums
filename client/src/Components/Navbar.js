@@ -11,8 +11,9 @@ const Navbar = ({user, handleLogOut}) => {
 
   if (user){
     return (
-      <NavLink to="/myProfile">{user.username}</NavLink>
-      
+      <div className='navBar'>
+        <NavLink to="/myProfile">{user.username}</NavLink>
+      </div>
     )
   } else {
     return <div></div>
