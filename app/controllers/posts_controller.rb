@@ -13,7 +13,7 @@ class PostsController < ApplicationController
 
     def show
         post = Post.find_by!(id: params[:id])
-        render json: post, status: :ok
+        render json: post, include: ['comments', 'comments.user'], status: :ok
     end
 
     private

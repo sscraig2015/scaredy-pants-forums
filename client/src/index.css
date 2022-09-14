@@ -93,3 +93,12 @@ button:hover {
   color: #f1f1f1;
   
 }
+
+header {
+  text-align: center;
+}
+header > div {
+
+  padding: 20px;
+}
+

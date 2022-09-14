@@ -1,11 +1,15 @@
 import React, {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
+import CommentList from '../Components/CommentList'
+import NewComment from '../Components/NewComment'
+
 
 
 const PostPage = () => {
   
   let params = useParams()
   const [post, setPost] = useState()
+  console.log(post)
 
   useEffect(() => {
     fetch(`/posts/${params.id}`)
@@ -16,9 +20,15 @@ const PostPage = () => {
 
     if (post) {
         return (
-            <div>
-                {post.title}
-                {post.body}
+            <div className='homePage'>
+                <div className='content'>
+                    <header><h4>{post.title}</h4></header>
+                    <div className='postBody'>{post.body}</div>
+                        <CommentList comments={post.comments}/>
+                    <div className='newPostForm'>
+                        <NewComment postId={post.id}/>
+                    </div>
+                </div>
             </div>
     )
     } else {

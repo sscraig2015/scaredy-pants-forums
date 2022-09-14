@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :comments
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   resources :users
   delete '/sessions', to: 'sessions#destroy'
   post '/login', to: 'sessions#create'
