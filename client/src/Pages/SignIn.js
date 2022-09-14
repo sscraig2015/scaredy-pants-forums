@@ -22,10 +22,12 @@ const SignIn = ({setUser}) => {
         password,
       })
     })
-      .then((r) => r.json())
-      .then((user) => setUser(user))
-      navigate("/homepage")
-
+      .then((r) => {
+        if(r.ok) {
+          r.json().then((data) => setUser(data))
+          navigate("/homepage")
+        }
+      })
   }
     
     

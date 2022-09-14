@@ -8,9 +8,11 @@ const Homepage = ({user, handleLogOut}) => {
     const [revealPostForm, setPostForm] = useState(false)
     const [currentPosts, setPosts] = useState([])
 
+
     function revealNewPost(){
         setPostForm(!revealPostForm)
     }
+
 
     useEffect(() => {
         fetch("/posts")
@@ -30,7 +32,7 @@ const Homepage = ({user, handleLogOut}) => {
                
                 <div className='newPostForm'>
                     <button  onClick={revealNewPost}>New Post</button>
-                    {revealPostForm ? <NewPost currentPosts={currentPosts} setPosts={setPosts}/> : null}
+                    {revealPostForm ? <NewPost currentPosts={currentPosts} setPosts={setPosts} revealNewPost={revealNewPost}/> : null}
                 </div> 
             </div>
    

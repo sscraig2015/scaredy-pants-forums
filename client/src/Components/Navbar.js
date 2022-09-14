@@ -7,12 +7,13 @@ const Navbar = ({user, handleLogOut}) => {
 
 
 
-
+  console.log(user)
 
   if (user){
     return (
       <div className='navBar'>
         <NavLink to="/myProfile">{user.username}</NavLink>
+        <button className="logoutButton" onClick={handleLogOut}>Logout</button>
       </div>
     )
   } else {

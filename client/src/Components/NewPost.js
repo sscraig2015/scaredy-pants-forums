@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const NewPost = ({setPosts, currentPosts}) => {
+const NewPost = ({setPosts, currentPosts, revealNewPost}) => {
   
     const [topic, setTopic] = useState("")
     const [topicText, setTopicText] = useState("")
@@ -19,7 +19,9 @@ const NewPost = ({setPosts, currentPosts}) => {
             })  
         })
         .then((r) => r.json())
-        .then((post) => setPosts(post, ...currentPosts))
+        .then((post) => setPosts([post, ...currentPosts]))
+
+        revealNewPost()
     }
     
     return (

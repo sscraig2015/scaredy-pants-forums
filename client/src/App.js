@@ -5,6 +5,7 @@ import Homepage from "./Pages/Homepage";
 import NavBar from './Components/Navbar'
 import SignIn from "./Pages/SignIn";
 import LandingPage from "./Pages/LandingPage";
+import PostPage from "./Pages/PostPage";
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
       })
       }, []);
 
-      function handleLogOut(){
+    function handleLogOut(){
         fetch('/sessions', {
           method: 'DELETE',
           headers: {
@@ -38,16 +39,15 @@ function App() {
       }
     
 
-
-       
   return (
      <div>
-      <NavBar setUser={setUser} user={user}/>
+      <NavBar setUser={setUser} user={user} handleLogOut={handleLogOut}/>
         <Routes>
           <Route path='/' element ={ <LandingPage />} />
           <Route path='/homepage' element ={ <Homepage user={user} handleLogOut={handleLogOut}/>} />
           <Route path='/signup' element={<Signup setUser={setUser}/>}/>
           <Route path='/signin' element={<SignIn setUser={setUser}/>}/>
+          <Route path='/posts/:id' element={<PostPage/>}/>
         </Routes>
       </div>
      

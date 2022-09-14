@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+ 
+
     def create
         newUser = current_user.posts.create!(user_params)
         render json: newUser, status: :ok
@@ -7,6 +9,11 @@ class PostsController < ApplicationController
 
     def index
         render json: Post.all, status: :ok
+    end
+
+    def show
+        post = Post.find_by!(id: params[:id])
+        render json: post, status: :ok
     end
 
     private
