@@ -26,7 +26,7 @@ const NewPost = ({setPosts, currentPosts, revealNewPost}) => {
     
     return (
     <div>
-        <form id='formReset' onSubmit={newPost}>
+        <form onSubmit={newPost}>
             <label>Title:</label>
             <input
               type="text"
@@ -36,7 +36,7 @@ const NewPost = ({setPosts, currentPosts, revealNewPost}) => {
             />
             <label>Text:</label>
             <input
-              type="text"
+              type="textarea"
               id="topicText"
               value={topicText}
               onChange={(e) => setTopicText(e.target.value)}

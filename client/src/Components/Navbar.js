@@ -9,8 +9,8 @@ const Navbar = ({user, handleLogOut}) => {
     return (
       
       <div className='navBar'>
-      
-        <img src={logo} alt='logo'></img>
+          
+          <img src={logo} alt='logo'></img>
 
         <div className='navBarCointainer'>
           <NavLink to="/home">Home</NavLink>

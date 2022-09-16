@@ -26,7 +26,7 @@ const Homepage = ({user, handleLogOut}) => {
      
             <div className='homePage'>
                 <div className='newPostForm'>
-                    <button  onClick={revealNewPost}>New Post</button>
+                    <button  onClick={revealNewPost}>Submit New Post</button>
                     {revealPostForm ? <NewPost currentPosts={currentPosts} setPosts={setPosts} revealNewPost={revealNewPost}/> : null}
                 </div> 
                 <div className='content'>
