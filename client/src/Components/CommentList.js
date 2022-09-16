@@ -1,7 +1,8 @@
 import React from 'react'
 
-const CommentList = ({comments}) => {
-  console.log(comments)
+
+const CommentList = ({comments, userId}) => {
+    
     return (
         comments.map((comment) => {
             return (
@@ -9,6 +10,7 @@ const CommentList = ({comments}) => {
                     <div className='individualPostContent'>
                         <header>{comment.user.username}</header>
                         {comment.body}
+                        {comment.user.id === userId ? <button >Delete</button> : null}
                     </div>
                 </div>
             )

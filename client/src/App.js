@@ -14,7 +14,7 @@ function App() {
 
   let navigate = useNavigate();
   const [user, setUser] = useState(null)
-
+  console.log(user)
 
    useEffect(() => {
 
@@ -49,7 +49,7 @@ function App() {
           <Route path='myProfile' element={<UserProfile user={user}/>}/>
           <Route path='/signup' element={<Signup setUser={setUser}/>}/>
           <Route path='/signin' element={<SignIn setUser={setUser}/>}/>
-          <Route path='/posts/:id' element={<PostPage/>}/>
+          <Route path='/posts/:id' element={<PostPage user={user}/>}/>
         </Routes>
       </div>
      

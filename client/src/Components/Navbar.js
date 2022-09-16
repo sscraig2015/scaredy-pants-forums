@@ -4,11 +4,6 @@ import { NavLink } from 'react-router-dom';
 
 
 const Navbar = ({user, handleLogOut}) => {
-
-
-
-  console.log(user)
-
   if (user){
     return (
       <div className='navBar'>

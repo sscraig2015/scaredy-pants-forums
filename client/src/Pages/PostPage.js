@@ -5,11 +5,12 @@ import NewComment from '../Components/NewComment'
 
 
 
-const PostPage = () => {
+const PostPage = ({user}) => {
   
   let params = useParams()
   const [post, setPost] = useState()
   console.log(post)
+ 
 
   useEffect(() => {
     fetch(`/posts/${params.id}`)
@@ -24,7 +25,7 @@ const PostPage = () => {
                 <div className='content'>
                     <header><h4>{post.title}</h4></header>
                     <div className='postBody'>{post.body}</div>
-                        <CommentList comments={post.comments}/>
+                        <CommentList comments={post.comments} userId={user.id}/>
                     <div className='newPostForm'>
                         <NewComment postId={post.id}/>
                     </div>

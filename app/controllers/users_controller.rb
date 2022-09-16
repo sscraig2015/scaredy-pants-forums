@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    skip_before_action :authorize
+    skip_before_action :authorize, only: [:create]
     
     def create 
         user = User.create!(user_params)
@@ -8,9 +8,9 @@ class UsersController < ApplicationController
     end
 
     def show
-        
-        currentUser = User.find_by!(id: session[:user_id])
-        render json: currentUser, status: :ok
+
+        currentUser = current_user
+        render json: currentUser, include: ['comments', 'comments.post'], status: :ok
     end
 
     private

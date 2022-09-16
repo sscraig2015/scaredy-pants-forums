@@ -28,6 +28,7 @@ const Homepage = ({user, handleLogOut}) => {
                 <div className='content'>
                     <h1>Posts</h1>
                         <PostList allPosts={currentPosts}/>
+                        
                 </div>
                
                 <div className='newPostForm'>
