@@ -25,16 +25,15 @@ const Homepage = ({user, handleLogOut}) => {
     return (
      
             <div className='homePage'>
-                <div className='content'>
-                    <h1>Posts</h1>
-                        <PostList allPosts={currentPosts}/>
-                        
-                </div>
-               
                 <div className='newPostForm'>
                     <button  onClick={revealNewPost}>New Post</button>
                     {revealPostForm ? <NewPost currentPosts={currentPosts} setPosts={setPosts} revealNewPost={revealNewPost}/> : null}
                 </div> 
+                <div className='content'>
+                        <PostList allPosts={currentPosts}/>
+                </div>
+               
+               
             </div>
    
             )  

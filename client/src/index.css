@@ -46,12 +46,6 @@ button:hover {
 
 
 .homePage {
-  display: grid;
-  grid-template-areas:
-    'header header header header header header'
-    'menu main main main right right'
-    'menu footer footer footer footer footer';
-  gap: 10px;
   background-color: #2196F3;
   padding: 10px;
 }
@@ -63,27 +57,48 @@ button:hover {
 }
 
 .newPostForm {
-  grid-area: menu;
-  margin-left: 10%;
-
+  float: right;
+  background-color: white;
+  margin: 0px 5px 0 5px;
+  width: 300px;
+  height: 427px;
 }
 
 .content {
 
-  grid-area: main;
+margin-right: 320px;
 
 }
+
+.postHomePage {
+  display: flex;
+  
+}
+
+.postId{
+  margin: 0px 7px 0px 7px;
+}
+
 
 .individualPost{
   border: 1px solid rgb(0, 0, 0);
-  margin: 2px 0px 0px 10px;
+  margin: 3px 15px 3px 4px;
   padding: 0px;
   cursor: pointer;
+  flex-grow: 4;
 }
-
 .individualPostContent{
   margin: 2px 0px 0px 10px;
 
+}
+
+.individualPostContent a{
+  font-size: 25px;
+
+}
+
+.postInfo {
+  font: normal small verdana,arial,helvetica,sans-serif;
 }
 
 .logoutButton {
