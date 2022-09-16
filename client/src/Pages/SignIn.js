@@ -25,7 +25,7 @@ const SignIn = ({setUser}) => {
       .then((r) => {
         if(r.ok) {
           r.json().then((data) => setUser(data))
-          navigate("/homepage")
+          navigate("/home")
         }
       })
   }
@@ -37,7 +37,7 @@ const SignIn = ({setUser}) => {
       <div className='formContainer'>
         <form onSubmit={handleSubmit}>
           
-            <label htmlFor="username">Username:</label>
+            <label autofocus htmlFor="username">Username:</label>
             <input
               type="text"
               id="username"

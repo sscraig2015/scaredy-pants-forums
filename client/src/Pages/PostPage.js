@@ -34,7 +34,7 @@ function handleCommentDelete(e){
             <div className='homePage'>
                 <div className='newPostForm'>
                         <NewComment postId={post.id}/>
-                    </div>
+                </div>
                 
                 <div className='content'>
                     <div className='postSubmitData' id='postSubmitData'>

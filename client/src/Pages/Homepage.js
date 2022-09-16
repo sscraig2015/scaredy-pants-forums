@@ -3,7 +3,7 @@ import NewPost from '../Components/NewPost'
 import PostList from '../Components/PostList'
 
 
-const Homepage = ({user, handleLogOut}) => {
+const Homepage = ({user, setUser}) => {
   
     const [revealPostForm, setPostForm] = useState(false)
     const [currentPosts, setPosts] = useState([])
@@ -19,6 +19,16 @@ const Homepage = ({user, handleLogOut}) => {
         .then((r) => r.json())
         .then((posts) => setPosts(posts))
     }, [])
+
+    useEffect(() => {
+        fetch("/me").then((r) => {
+        if (r.ok) {
+          r.json().then((user) => setUser(user));
+        }
+      })
+    },[])
+
+
     
 
     if (user) {

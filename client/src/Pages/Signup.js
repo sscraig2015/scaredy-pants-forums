@@ -37,7 +37,7 @@ const Signup = ({setUser}) => {
               .then((r) => {
                 if(r.ok) {
                   r.json().then((data) => setUser(data))
-                  navigate("/homepage")
+                  navigate("/home")
                 }
               })
           }

@@ -1,10 +1,19 @@
 body{
   line-height: 1.5;
+  background-color: #607196;
 }
 
 form {
   border: 3px solid #f1f1f1;
   
+}
+
+input[type=submit] {
+  background: #FF7B9C;
+  color: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  text-shadow: none;
 }
 
 input[type=text], input[type=password] {
@@ -17,17 +26,18 @@ input[type=text], input[type=password] {
 }
 
 button {
-  background-color: #04AA6D;
+  background-color: #FF7B9C;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 75%;
 }
 
 button:hover {
   opacity: 0.8;
+  background-color: #FFC759;
 }
 
 .cancelbtn {
@@ -43,16 +53,17 @@ button:hover {
 }
 
 .navBar{
-
+  background-color: #BABFD1;
   display: block;
 }
 
 .navBarCointainer{
   align-items: baseline;
   font-size: 18px;
+
   display: inline;
   position: absolute;
-  right: 5px;
+  right: 10px;
 }
 
 
@@ -66,11 +77,13 @@ button:hover {
 
 .navBar a{
 margin: 0px 3px 0px 3px;
+text-decoration: none;
+color: #000000;
 }
 
 
 .homePage {
-  background-color: #2196F3;
+  background-color: #607196;
   padding: 10px;
 }
 
@@ -151,9 +164,10 @@ text-decoration: none;
 
 
 .postBody{
-  border: 1px solid blue;
+  border: 1px solid #BABFD1;
   border-radius: 3px;
-  margin: 10px 3px 10px 3px;
+  margin: 10px 70px 10px 3px;
+  font-size: 20px;
 }
 
 .logoutButton {
@@ -207,3 +221,17 @@ header > div {
 .commentBase{
  display: flex; 
 }
+
+.prefContainer {
+  width: 40%;
+  margin: 50px 378px 378px;
+  border: 1px solid red;
+  text-align: center;
+}
+
+.userUpdateForm {
+  width: 80%;
+  margin: auto;
+  text-align: left;
+}
+

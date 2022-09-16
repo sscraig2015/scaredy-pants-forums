@@ -10,12 +10,12 @@ const Navbar = ({user, handleLogOut}) => {
       
       <div className='navBar'>
           
-          <img src={logo} alt='logo'></img>
+        <Link to='/home'><img src={logo} alt='logo'/></Link>
 
         <div className='navBarCointainer'>
-          <NavLink to="/home">Home</NavLink>
+          
           <NavLink to="/myProfile">{user.username}</NavLink>
-          <NavLink to="/home">Account Settings</NavLink>
+          <NavLink to="/preferences">Preferences</NavLink>
           <button className="logoutButton" onClick={handleLogOut}>Logout</button>
         </div>
       </div>

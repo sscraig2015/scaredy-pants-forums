@@ -3,8 +3,16 @@ import { Link } from 'react-router-dom'
 
 const PostList = ({allPosts}) => {
   
-console.log(allPosts)
-  return allPosts.map((post, key) => {
+  if (allPosts.length === 0){
+    return(
+
+        <div className='commentBase'>
+            <div className='postId'></div>
+            <div className='postInfo'>no posts</div>
+        </div>
+    )
+} else {
+return allPosts.map((post, key) => {
     return (
     <div className='postHomePage'>
       <div className='postId'>{key + 1}</div>
@@ -18,6 +26,7 @@ console.log(allPosts)
     )
   })
   
+}
 }
 
 export default PostList

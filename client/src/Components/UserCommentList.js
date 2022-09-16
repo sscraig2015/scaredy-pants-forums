@@ -3,21 +3,32 @@ import { NavLink } from 'react-router-dom'
 
 const UserCommentList = ({comments}) => {
 
-    console.log(comments)
+    if (comments.length === 0){
+        return(
+
+            <div className='commentBase'>
+                <div className='postId'></div>
+                <div className='postInfo'>no comments</div>
+            </div>
+        )
+    } else {
+
+        return (
+            comments.map((comment, key) => {
+                return (
+                    <div className='commentBase'>
+                        <div className='postId'>{key + 1}</div>
+                        <div className='comment'>
+                        <div className='commentContent'>
+                            <header><NavLink to={`/posts/${comment.post.id}`}>{comment.post.title}</NavLink></header>
+                            {comment.body}
+                            
+                        </div>
+                    </div></div>
+                )
+        })
+        )
     
-    return (
-        comments.map((comment) => {
-            return (
-                <div className='individualPost'>
-                    <div className='individualPostContent'>
-                        <header><NavLink to={`/posts/${comment.post.id}`}>{comment.post.title}</NavLink></header>
-                        {comment.body}
-                        
-                    </div>
-                </div>
-            )
-    })
-    )
-}
+}}
 
 export default UserCommentList

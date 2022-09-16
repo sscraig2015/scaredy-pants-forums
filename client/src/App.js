@@ -7,6 +7,7 @@ import SignIn from "./Pages/SignIn";
 import LandingPage from "./Pages/LandingPage";
 import PostPage from "./Pages/PostPage";
 import UserProfile from "./Pages/UserProfile";
+import Preferences from "./Pages/Preferences";
 
 
 function App() {
@@ -53,8 +54,9 @@ function App() {
       <NavBar setUser={setUser} user={user} handleLogOut={handleLogOut}/>
         <Routes>
           <Route path='/' element ={ <LandingPage />} />
-          <Route path='/home' element ={ <Homepage user={user}/>} />
-          <Route path='myProfile' element={<UserProfile user={user}/>}/>
+          <Route path='/home' element ={ <Homepage user={user} setUser={setUser}/>} />
+          <Route path='/myProfile' element={<UserProfile user={user}/>}/>
+          <Route path='/preferences' element={<Preferences user={user}/>}/>
           <Route path='/signup' element={<Signup setUser={setUser}/>}/>
           <Route path='/signin' element={<SignIn setUser={setUser}/>}/>
           <Route path='/posts/:id' element={<PostPage user={user}/>}/>
