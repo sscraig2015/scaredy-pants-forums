@@ -19,10 +19,7 @@ const UserProfile = ({user, handleLogOut }) => {
         }
 
         }
-           
-    
 
-    
     return (
     <div className='homePage'>
         
@@ -32,7 +29,7 @@ const UserProfile = ({user, handleLogOut }) => {
                 <div><button name='comments' onClick={handleClick}>Comments</button></div>
             </header>
             { posts ?  <PostList allPosts={user.posts} /> : null }
-            { comments ?  <UserCommentList comments={user} /> : null }
+            { comments ?  <UserCommentList comments={user.comments} /> : null }
         </div>
             
         </div> 

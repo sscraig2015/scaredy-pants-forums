@@ -17,7 +17,7 @@ const NewComment = ({postId}) => {
                 body: body,
             })  
         })
-        .then((r) => r.json())
+        .then((r) => window.location.reload(false))
         
     }
     

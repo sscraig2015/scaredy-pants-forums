@@ -9,14 +9,23 @@ const PostPage = ({user}) => {
   
   let params = useParams()
   const [post, setPost] = useState()
-  console.log(post)
  
 
   useEffect(() => {
     fetch(`/posts/${params.id}`)
     .then((r) => r.json())
     .then((post) => setPost(post))
-}, [])
+    }, [])
+
+
+function handleCommentDelete(e){
+
+    let commentId = e.target.value
+    fetch(`/comments/${commentId}`, {
+        method: 'DELETE'
+    })
+    .then((r) => window.location.reload(true))
+}
     
 
     if (post) {
@@ -25,7 +34,7 @@ const PostPage = ({user}) => {
                 <div className='content'>
                     <header><h4>{post.title}</h4></header>
                     <div className='postBody'>{post.body}</div>
-                        <CommentList comments={post.comments} userId={user.id}/>
+                        <CommentList comments={post.comments} handleCommentDelete={handleCommentDelete} userId={user.id}/>
                     <div className='newPostForm'>
                         <NewComment postId={post.id}/>
                     </div>

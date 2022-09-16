@@ -21,10 +21,7 @@ function App() {
     fetch("/me").then((r) => {
         if (r.ok) {
           r.json().then((user) => setUser(user));
-          navigate("/homepage")
-        } else {
-          navigate("/signin")
-        };
+        }
       })
       }, []);
 
@@ -38,9 +35,20 @@ function App() {
         navigate("/signin")
         setUser(null)
       }
-    
 
-  return (
+  if (!user) {
+    return (
+      <div>
+         <Routes>
+           <Route path='/' element ={ <LandingPage />} />
+           <Route path='/signup' element={<Signup setUser={setUser}/>}/>
+           <Route path='/signin' element={<SignIn setUser={setUser}/>}/>
+         </Routes>
+       </div>
+      
+   ); 
+  } else if (user) {
+    return (
      <div>
       <NavBar setUser={setUser} user={user} handleLogOut={handleLogOut}/>
         <Routes>
@@ -54,6 +62,10 @@ function App() {
       </div>
      
   );
+  }
+    
+
+  
 }
 
 export default App;

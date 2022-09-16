@@ -8,9 +8,8 @@ class UsersController < ApplicationController
     end
 
     def show
-
         currentUser = current_user
-        render json: currentUser, include: ['comments', 'comments.post'], status: :ok
+        render json: currentUser, include: ['posts', 'comments', 'comments.post'], status: :ok
     end
 
     private
