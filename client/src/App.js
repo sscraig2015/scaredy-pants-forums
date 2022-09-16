@@ -53,7 +53,7 @@ function App() {
       <NavBar setUser={setUser} user={user} handleLogOut={handleLogOut}/>
         <Routes>
           <Route path='/' element ={ <LandingPage />} />
-          <Route path='/homepage' element ={ <Homepage user={user}/>} />
+          <Route path='/home' element ={ <Homepage user={user}/>} />
           <Route path='myProfile' element={<UserProfile user={user}/>}/>
           <Route path='/signup' element={<Signup setUser={setUser}/>}/>
           <Route path='/signin' element={<SignIn setUser={setUser}/>}/>

@@ -39,10 +39,28 @@ button:hover {
 }
 
 .navBar{
-  text-align: right;
   margin-top: 3%;
+  display: block;
 }
 
+.navBarCointainer{
+  align-items: baseline;
+  font-size: 18px;
+  display: inline;
+  position: absolute;
+  right: 5px;
+}
+
+
+.navBar img{
+  height: 35px;
+  width: 80px;
+  display: inline-block;
+}
+
+.navBar a{
+margin: 0px 3px 0px 3px;
+}
 
 
 .homePage {
@@ -67,25 +85,30 @@ button:hover {
 .content {
 
 margin-right: 320px;
-
+box-shadow: 3px 3px #9b9b9b;
 }
 
 .postHomePage {
   display: flex;
-  
+
 }
 
 .postId{
   margin: 0px 7px 0px 7px;
+  width: 35px;
+  font-size: 20px;
+  text-align: center;
+  padding: 17px 0;
+  
 }
 
 
 .individualPost{
-  border: 1px solid rgb(0, 0, 0);
   margin: 3px 15px 3px 4px;
   padding: 0px;
   cursor: pointer;
   flex-grow: 4;
+  
 }
 .individualPostContent{
   margin: 2px 0px 0px 10px;
@@ -94,7 +117,8 @@ margin-right: 320px;
 
 .individualPostContent a{
   font-size: 25px;
-
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .postInfo {
