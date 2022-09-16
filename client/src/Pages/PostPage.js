@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react'
-import {useParams} from 'react-router-dom'
+import {useParams, NavLink} from 'react-router-dom'
 import CommentList from '../Components/CommentList'
 import NewComment from '../Components/NewComment'
+
 
 
 
@@ -31,14 +32,22 @@ function handleCommentDelete(e){
     if (post) {
         return (
             <div className='homePage'>
-                <div className='content'>
-                    <header><h4>{post.title}</h4></header>
-                    <div className='postBody'>{post.body}</div>
-                        <CommentList comments={post.comments} handleCommentDelete={handleCommentDelete} userId={user.id}/>
-                    <div className='newPostForm'>
+                <div className='newPostForm'>
                         <NewComment postId={post.id}/>
                     </div>
+                
+                <div className='content'>
+                    <div className='postSubmitData' id='postSubmitData'>
+                        <div className='individualPost'>
+                            <p>{post.title}</p>
+                            <div className='postInfo'>Post data</div>
+                        </div>
+                        
+                        <div className='postBody'>{post.body}</div>
+                    </div>    
+                        <CommentList comments={post.comments} handleCommentDelete={handleCommentDelete} userId={user.id}/>
                 </div>
+                    
             </div>
     )
     } else {

@@ -1,3 +1,7 @@
+body{
+  line-height: 1.5;
+}
+
 form {
   border: 3px solid #f1f1f1;
   
@@ -112,6 +116,11 @@ box-shadow: 3px 3px #9b9b9b;
   flex-grow: 4;
   
 }
+
+.individualPost a{
+text-decoration: none;
+  
+}
 .individualPostContent{
   margin: 2px 0px 0px 10px;
 
@@ -121,11 +130,30 @@ box-shadow: 3px 3px #9b9b9b;
   font-size: 25px;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
-
 }
 
 .postInfo {
   font: normal small verdana,arial,helvetica,sans-serif;
+}
+
+.postSubmitData{
+  margin: 0px 20px 20px 60px;
+  background-color: #F0F3FC;
+  font-size: 25px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.postSubmitData p{
+  margin: 0px;
+  background-color: #F0F3FC;
+}
+
+
+.postBody{
+  border: 1px solid blue;
+  border-radius: 3px;
+  margin: 10px 3px 10px 3px;
 }
 
 .logoutButton {
@@ -144,3 +172,38 @@ header > div {
   padding: 20px;
 }
 
+.comment {
+  margin: 0px 20px 5px 13px;
+  padding: 0px;
+  border: 1px solid blue;
+  flex-grow: 4;
+}
+
+.commentContent {
+  margin: 2px 0px 0px 10px;
+  display: block;
+}
+
+.commentContent header{
+  text-align: left;
+  font: normal small verdana,arial,helvetica,sans-serif;
+}
+
+.commentContent button{
+  height: 5px;
+  width: 20px;
+  background: rgb(255, 194, 194);
+  margin: 0px 7px 0px 7px;
+  text-align: center;
+  padding: 17px 0;
+}
+
+.commentContent button:hover{
+
+  background: rgb(255, 23, 23);
+  
+}
+
+.commentBase{
+ display: flex; 
+}
