@@ -5,6 +5,8 @@ import { useParams, useNavigate } from 'react-router-dom'
 const NewComment = ({ setComments, comments}) => {
     
     const [body, setBody] = useState("")
+    const [errors, setErrors] = useState()
+    
     let params = useParams()
     let navigate = useNavigate()
     
@@ -20,14 +22,22 @@ const NewComment = ({ setComments, comments}) => {
                 body: body,
             })  
         })
-        .then((r) => r.json())
-        navigate('/home')
+        .then((r) => {
+            if(r.ok) {
+                navigate('/home')
+            } else {
+                r.json().then((errors) => setErrors(errors))
+            }
+        })
     }
+
     
     return (
     <div>
         <form  onSubmit={newComment}>
+        
             <label>Comment:</label>
+            {errors ? <div>{errors.error}</div> : null}
             <input
               type="text"
               id="commentText"
@@ -36,7 +46,6 @@ const NewComment = ({ setComments, comments}) => {
             />
             <input
               type="submit"
-              id="topicSubmit"
             />
         </form>
     </div>

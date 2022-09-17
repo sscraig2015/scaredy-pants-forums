@@ -52,11 +52,10 @@ function App() {
      <div className="appMain">
       <NavBar user={user} handleLogOut={handleLogOut}/>
         <Routes>
+          <Route path='*' element = { <Homepage user={user} setUser={setUser}/>} />
           <Route path='/home' element ={ <Homepage user={user} setUser={setUser}/>} />
           <Route path='/myProfile' element={<UserProfile user={user}/>}/>
           <Route path='/preferences' element={<Preferences user={user}/>}/>
-          <Route path='/signup' element={<Signup setUser={setUser}/>}/>
-          <Route path='/signin' element={<SignIn setUser={setUser}/>}/>
           <Route path='/posts/:id' element={<PostPage user={user}/>}/>
         </Routes>
       </div>
