@@ -1,24 +1,33 @@
-# README
+# The Scaredy Pants Forums
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hello! Welcome! This is a forum where you can discuss all things that are scary or pants related! Create an account and join countless* other members to discuss whatever you want! 
 
-Things you may want to cover:
 
-* Ruby version
+It's all pretty standard stuff but don't be afraid to ask any questions.
 
-* System dependencies
 
-* Configuration
 
-* Database creation
+*Can't count what's not there.
 
-* Database initialization
+## "This sounds great! How do I start immediately?"
 
-* How to run the test suite
+Head on over to the OFFICIAL  [Scaredy Pants Forums](https://scaredy-pants-forum.herokuapp.com/signin) and create an account, it's that easy! 
 
-* Services (job queues, cache servers, search engines, etc.)
+## "Aww geez, I think I'm in over my head. Where do I start?"
 
-* Deployment instructions
+Do not worry, as of now this is only a text based forum and you need not worry about images, videos, or any external links. Let's go ahead and make a new topic.
 
-* ...
+* To add a topic click on the "Create New Topic" button on the right side of the screen. 
+* Add a "Topic Title" and include some "Text" to get the conversation going. Ask people what their favorite horror movie is or maybe start a discussion about who the best scream queen is! It's all up to you!
+
+
+
+## "How could one man accomplish all this?"
+Thank you, but it's actually not as hard as it looks!
+
+My application is built with the following technologies:
+* Ruby on Rails
+* React
+
+## "I think this is illegal! Where are your licenses??"
+[MIT](https://choosealicense.com/licenses/mit/)
