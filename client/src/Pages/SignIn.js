@@ -7,6 +7,8 @@ const SignIn = ({setUser}) => {
       
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState()
+
   let navigate = useNavigate()
   
   function handleSubmit(e) {
@@ -27,6 +29,9 @@ const SignIn = ({setUser}) => {
         if(r.ok) {
           r.json().then((data) => setUser(data))
           navigate("/home")
+        } else {
+          r.json().then((r) => setErrors(r))
+          
         }
       })
   }
@@ -56,6 +61,7 @@ const SignIn = ({setUser}) => {
               <button type="submit">Submit</button>
               
           </form>
+          {errors ? <div>{errors.errors}</div> : null }
           <NavLink to='/signup'>Create account?</NavLink>
         </div>
       </div>

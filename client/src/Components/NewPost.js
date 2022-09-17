@@ -4,7 +4,8 @@ const NewPost = ({setPosts, currentPosts, revealNewPost}) => {
   
     const [topic, setTopic] = useState("")
     const [topicText, setTopicText] = useState("")
-    
+    const [errors, setErrors] = useState()
+
     function newPost(e){
         e.preventDefault()
 
@@ -18,14 +19,19 @@ const NewPost = ({setPosts, currentPosts, revealNewPost}) => {
                 body: topicText,
             })  
         })
-        .then((r) => r.json())
-        .then((post) => setPosts([post, ...currentPosts]))
-
-        revealNewPost()
+        .then((r) => {
+          if(r.ok){
+            r.json().then((post) => setPosts([post, ...currentPosts]))
+            revealNewPost()
+          } else {
+            r.json().then((error) => setErrors(error))
+          }
+        })
     }
-    
+
     return (
     <div>
+      {errors ? <div>{errors.error}</div> : null}
         <form onSubmit={newPost}>
             <label>Title:</label>
             <input
