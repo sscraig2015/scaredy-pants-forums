@@ -1,11 +1,12 @@
 import React, {useState} from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 
 const NewComment = ({ setComments, comments}) => {
     
     const [body, setBody] = useState("")
     let params = useParams()
+    let navigate = useNavigate()
     
     function newComment(e){
         e.preventDefault()
@@ -20,7 +21,7 @@ const NewComment = ({ setComments, comments}) => {
             })  
         })
         .then((r) => r.json())
-        window.location.reload(true)
+        navigate('/home')
     }
     
     return (
