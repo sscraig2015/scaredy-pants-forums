@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
 
- 
 
     def create
         newUser = current_user.posts.create!(user_params)
@@ -13,7 +12,7 @@ class PostsController < ApplicationController
 
     def show
         post = Post.find_by!(id: params[:id])
-        render json: post, include: ['comments', 'comments.user'], status: :ok
+        render json: post, include: ['user', 'comments', 'comments.user'], status: :ok
     end
 
     private

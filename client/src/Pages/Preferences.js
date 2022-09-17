@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Preferences = ({user}) => {
 
+    let navigate = useNavigate()
     const [username, setUsername] = useState()
     const [password, setPassword] = useState()
 
@@ -22,7 +24,7 @@ const Preferences = ({user}) => {
                   })
             }
         })
-        
+        window.location.reload(true)
     }
 
     function updateUser(e){

@@ -3,7 +3,7 @@ import CommentList from '../Components/CommentList'
 import PostList from '../Components/PostList'
 import UserCommentList from '../Components/UserCommentList'
 
-const UserProfile = ({user, handleLogOut }) => {
+const UserProfile = ({user}) => {
  
     console.log(user)
     const [posts, revealPosts] = useState(false)
@@ -18,7 +18,7 @@ const UserProfile = ({user, handleLogOut }) => {
             revealPosts(!posts)
         }
 
-        }
+    }
 
     return (
     <div className='homePage'>
@@ -28,7 +28,7 @@ const UserProfile = ({user, handleLogOut }) => {
                 <div><button name='posts' onClick={handleClick}>Posts</button></div>
                 <div><button name='comments' onClick={handleClick}>Comments</button></div>
             </header>
-            { posts ?  <PostList allPosts={user.posts} /> : null }
+            { posts ?  <PostList allPosts={user.posts} forUser={true}/> : null }
             { comments ?  <UserCommentList comments={user.comments} /> : null }
         </div>
             

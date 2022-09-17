@@ -10,6 +10,8 @@ const PostPage = ({user}) => {
   
   let params = useParams()
   const [post, setPost] = useState()
+  console.log(post)
+
  
 
   useEffect(() => {
@@ -40,7 +42,7 @@ function handleCommentDelete(e){
                     <div className='postSubmitData' id='postSubmitData'>
                         <div className='individualPost'>
                             <p>{post.title}</p>
-                            <div className='postInfo'>Post data</div>
+                            <div className='postInfo'>by: {post.user.username}</div>
                         </div>
                         
                         <div className='postBody'>{post.body}</div>

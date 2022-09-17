@@ -28,9 +28,6 @@ const Homepage = ({user, setUser}) => {
       })
     },[])
 
-
-    
-
     if (user) {
     return (
      
@@ -40,7 +37,7 @@ const Homepage = ({user, setUser}) => {
                     {revealPostForm ? <NewPost currentPosts={currentPosts} setPosts={setPosts} revealNewPost={revealNewPost}/> : null}
                 </div> 
                 <div className='content'>
-                        <PostList allPosts={currentPosts}/>
+                        <PostList allPosts={currentPosts} forUser={false}/>
                 </div>
                
                
