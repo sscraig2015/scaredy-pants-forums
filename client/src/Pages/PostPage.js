@@ -10,6 +10,7 @@ const PostPage = ({user}) => {
   
   let params = useParams()
   const [post, setPost] = useState()
+  const [comments, setComments] = useState([])
   console.log(post)
 
  
@@ -35,7 +36,7 @@ function handleCommentDelete(e){
         return (
             <div className='homePage'>
                 <div className='newPostForm'>
-                        <NewComment postId={post.id}/>
+                        <NewComment comments={comments} setComments={setComments}/>
                 </div>
                 
                 <div className='content'>
@@ -47,7 +48,7 @@ function handleCommentDelete(e){
                         
                         <div className='postBody'>{post.body}</div>
                     </div>    
-                        <CommentList comments={post.comments} handleCommentDelete={handleCommentDelete} userId={user.id}/>
+                        <CommentList comments={comments}  handleCommentDelete={handleCommentDelete} userId={user.id}/>
                 </div>
                     
             </div>

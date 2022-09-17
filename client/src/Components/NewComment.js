@@ -1,14 +1,17 @@
 import React, {useState} from 'react'
+import { useParams } from 'react-router-dom'
 
-const NewComment = ({postId}) => {
+
+const NewComment = ({ setComments, comments}) => {
     
     const [body, setBody] = useState("")
-    
+    let params = useParams()
+    console.log(params)
     
     function newComment(e){
         e.preventDefault()
 
-        fetch(`/posts/${postId}/comments`, {
+        fetch(`/posts/${params.id}/comments`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -18,7 +21,7 @@ const NewComment = ({postId}) => {
             })  
         })
         .then((r) => r.json())
-        window.location.reload(true)
+        .then((comment) => setComments([comment, ...comments]))
         
     }
     
