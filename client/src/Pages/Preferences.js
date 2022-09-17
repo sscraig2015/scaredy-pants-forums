@@ -6,6 +6,7 @@ const Preferences = ({user}) => {
     let navigate = useNavigate()
     const [username, setUsername] = useState()
     const [password, setPassword] = useState()
+    const [errors, setErrors] = useState()
 
     function handleUserDelete(){
         fetch(`/users/${user.id}`, {
@@ -41,12 +42,20 @@ const Preferences = ({user}) => {
                 'Content-Type': 'application/json'
             }
         })
-        window.location.reload(true)
+        .then((r) => {
+            if(r.ok) {
+                window.location.reload(true)
+            } else {
+
+                r.json().then((error) => setErrors(error.error))
+            }
+        })
     }
 
   return (
     <div className='prefContainer'>
         <div>Use this form to update username or password:</div>
+        {errors ? <div>{errors}</div> : null }
         <div className='userUpdateForm'>
             <form onSubmit={updateUser}>
                 <label>Username:</label>
