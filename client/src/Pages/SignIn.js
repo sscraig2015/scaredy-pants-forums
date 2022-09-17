@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { NavLink, useNavigate } from 'react-router-dom';
-
+import logo from  '../logo.jpg'
 
 
 const SignIn = ({setUser}) => {
@@ -36,7 +36,7 @@ const SignIn = ({setUser}) => {
   
     return (
       <div className='userInputForm'>
-   
+        <img src={logo} alt='logo'/>
         <div className='formContainer'>
           <form onSubmit={handleSubmit}>
               <label autofocus htmlFor="username">Username:</label>

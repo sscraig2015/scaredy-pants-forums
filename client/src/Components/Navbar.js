@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom';
-
+import logo from '../logo.jpg'
 
 
 
@@ -10,6 +10,7 @@ const Navbar = ({user, handleLogOut}) => {
       
       <div className='navBar'>
           
+        <Link to='/home'><img src={logo} alt='logo'/></Link>
 
         <div className='navBarCointainer'>
           
