@@ -11,6 +11,7 @@ const Navbar = ({user, handleLogOut}) => {
       <div className='navBar'>
           
         <Link to='/home'><img src={logo} alt='logo'/></Link>
+        <span>The Scaredy Pants Forums</span>
 
         <div className='navBarCointainer'>
           

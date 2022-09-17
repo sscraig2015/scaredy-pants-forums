@@ -60,23 +60,26 @@ button:hover {
 .navBar{
   background-color: #BABFD1;
   display: block;
+  font-size: 50px;
+  
 }
 
 .navBarCointainer{
   align-items: baseline;
   font-size: 18px;
-
   display: inline;
   position: absolute;
-  right: 10px;
+  right: 20px;
+  padding: 10px;
 }
 
 
 .navBar img{
-  height: 70px;
-  width: 70px;
+  height: 100px;
+  width: 100px;
   display: inline-block;
   border-radius: 50%;
+  margin: 10px 10px 0px 10px;
 }
 
 
