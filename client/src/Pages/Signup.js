@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import  {useNavigate, NavLink}  from 'react-router-dom';
-import logo from '/home/sscraig/Development/Mod4/world-time/world-time-mvp/world-time-mvp/client/src/Resources/scaredy pants logo.jpg'
 
 
 const Signup = ({setUser}) => {
@@ -48,7 +47,7 @@ const Signup = ({setUser}) => {
   
     return (
       <div className="userInputForm">
-        <img src={logo} alt='logo'/>
+    
         <div className='formContainer'>
           <form onSubmit={handleSubmit}>
               <label htmlFor="username">Username:</label>

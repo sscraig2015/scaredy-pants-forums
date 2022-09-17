@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom';
-import logo from '/home/sscraig/Development/Mod4/world-time/world-time-mvp/world-time-mvp/client/src/Resources/scaredy pants logo.jpg'
+
 
 
 
@@ -10,7 +10,6 @@ const Navbar = ({user, handleLogOut}) => {
       
       <div className='navBar'>
           
-        <Link to='/home'><img src={logo} alt='logo'/></Link>
 
         <div className='navBarCointainer'>
           

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import CommentList from '../Components/CommentList'
+
 import PostList from '../Components/PostList'
 import UserCommentList from '../Components/UserCommentList'
 
