@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {useParams, NavLink} from 'react-router-dom'
+import {useParams, NavLink, useNavigate} from 'react-router-dom'
 import CommentList from '../Components/CommentList'
 import NewComment from '../Components/NewComment'
 
@@ -10,6 +10,7 @@ const PostPage = ({user}) => {
   
   let params = useParams()
   const [post, setPost] = useState()
+  let navigate = useNavigate()
   
  
 
@@ -26,7 +27,7 @@ function handleCommentDelete(e){
     fetch(`/comments/${commentId}`, {
         method: 'DELETE'
     })
-    window.location.reload(true)
+    navigate('/home')
 }
 
 function setComments(){
