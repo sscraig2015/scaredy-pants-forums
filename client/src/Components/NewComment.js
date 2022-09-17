@@ -6,7 +6,6 @@ const NewComment = ({ setComments, comments}) => {
     
     const [body, setBody] = useState("")
     let params = useParams()
-    console.log(params)
     
     function newComment(e){
         e.preventDefault()
@@ -21,8 +20,7 @@ const NewComment = ({ setComments, comments}) => {
             })  
         })
         .then((r) => r.json())
-        .then((comment) => setComments([comment, ...comments]))
-        
+        window.location.reload(true)
     }
     
     return (
