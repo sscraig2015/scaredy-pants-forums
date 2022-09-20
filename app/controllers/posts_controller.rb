@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
 
     def create
+        debugger
         newUser = current_user.posts.create!(user_params)
         render json: newUser, status: :ok
     end
