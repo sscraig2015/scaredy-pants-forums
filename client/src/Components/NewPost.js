@@ -1,10 +1,12 @@
 import React, {useState} from 'react'
 
-const NewPost = ({setPosts, currentPosts, revealNewPost}) => {
+const NewPost = ({setPosts, currentPosts, revealNewPost, topics}) => {
   
-    const [topic, setTopic] = useState("")
-    const [topicText, setTopicText] = useState("")
+    const [title, setTitle] = useState("")
+    const [body, setBody] = useState("")
     const [errors, setErrors] = useState()
+
+    console.log(topics, 'topics')
 
     function newPost(e){
         e.preventDefault()
@@ -15,8 +17,8 @@ const NewPost = ({setPosts, currentPosts, revealNewPost}) => {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                title: topic,
-                body: topicText,
+                title: title,
+                body: body,
             })  
         })
         .then((r) => {
@@ -37,15 +39,21 @@ const NewPost = ({setPosts, currentPosts, revealNewPost}) => {
             <input
               type="text"
               id="topicTitle"
-              value={topic}
-              onChange={(e) => setTopic(e.target.value)}
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
             />
+            <label>Topic</label>
+            <select name='topic' id='topic'>
+              {topics.map((topic) => {
+                return <option value={topic.id}>{topic.title}</option>
+              })}
+            </select>
             <label>Text:</label>
             <input
               type="textarea"
               id="topicText"
-              value={topicText}
-              onChange={(e) => setTopicText(e.target.value)}
+              value={body}
+              onChange={(e) => setBody(e.target.value)}
             />
             <input
               type="submit"

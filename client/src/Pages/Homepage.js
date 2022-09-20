@@ -7,6 +7,7 @@ const Homepage = ({user, setUser}) => {
   
     const [revealPostForm, setPostForm] = useState(false)
     const [currentPosts, setPosts] = useState([])
+    const [topics, setTopics] = useState([])
 
 
     function revealNewPost(){
@@ -18,6 +19,12 @@ const Homepage = ({user, setUser}) => {
         fetch("/posts")
         .then((r) => r.json())
         .then((posts) => setPosts(posts))
+    }, [])
+
+    useEffect(() => {
+        fetch("/topics")
+        .then((r) => r.json())
+        .then((data) => setTopics(data))
     }, [])
 
     useEffect(() => {
@@ -34,7 +41,7 @@ const Homepage = ({user, setUser}) => {
             <div className='homePage'>
                 <div className='newPostForm'>
                     <button  onClick={revealNewPost}>Submit New Post</button>
-                    {revealPostForm ? <NewPost currentPosts={currentPosts} setPosts={setPosts} revealNewPost={revealNewPost}/> : null}
+                    {revealPostForm ? <NewPost currentPosts={currentPosts} setPosts={setPosts} revealNewPost={revealNewPost} topics={topics}/> : null}
                 </div> 
                 <div className='content'>
                         <PostList allPosts={currentPosts} forUser={false}/>
