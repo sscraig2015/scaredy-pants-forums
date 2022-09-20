@@ -29,7 +29,7 @@ const UserProfile = ({user}) => {
                 <div><button name='comments' onClick={handleClick}>Comments</button></div>
             </header>
             { posts ?  <PostList allPosts={user.posts} forUser={true}/> : null }
-            { comments ?  <UserCommentList comments={user.comments} /> : null }
+            { comments ?  <UserCommentList comments={user.comments} userId={user.id}/> : null }
         </div>
             
         </div> 

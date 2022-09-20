@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const UserCommentList = ({comments}) => {
+const UserCommentList = ({comments, userId}) => {
 
     if (comments.length === 0){
         return(
@@ -21,6 +21,7 @@ const UserCommentList = ({comments}) => {
                         <div className='comment'>
                         <div className='commentContent'>
                             <header><NavLink to={`/posts/${comment.post.id}`}>{comment.post.title}</NavLink></header>
+                            <NavLink to={`/comments/${comment.id}`}>Edit Comment?</NavLink>
                             {comment.body}
                             
                         </div>

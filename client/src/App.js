@@ -7,6 +7,7 @@ import SignIn from "./Pages/SignIn";
 import PostPage from "./Pages/PostPage";
 import UserProfile from "./Pages/UserProfile";
 import Preferences from "./Pages/Preferences";
+import Comment from "./Pages/Comment";
 
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
           <Route path='/myProfile' element={<UserProfile user={user}/>}/>
           <Route path='/preferences' element={<Preferences user={user}/>}/>
           <Route path='/posts/:id' element={<PostPage user={user}/>}/>
+          <Route path='/comments/:id' element={<Comment />} />
         </Routes>
       </div>
      
