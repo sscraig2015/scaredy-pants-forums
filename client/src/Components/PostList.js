@@ -33,6 +33,7 @@ if (allPosts.length === 0){
           <div className='individualPost'>
               <div className='individualPostContent'>
                 <div><Link to={`/posts/${post.id}`}>{post.title}</Link></div>
+                <div style={{fontSize:'15px'}} >Topic: {post.topic.title}</div>
                 <div className='postInfo'>Submitted at: {post.created_at} by {post.user.username}. {post.comments.length} comments</div>
               </div>
           </div>

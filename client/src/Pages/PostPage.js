@@ -10,6 +10,7 @@ const PostPage = ({user}) => {
   
   let params = useParams()
   const [post, setPost] = useState()
+  console.log(post)
   let navigate = useNavigate()
   
  
@@ -46,6 +47,7 @@ function setComments(){
                     <div className='postSubmitData' id='postSubmitData'>
                         <div className='individualPost'>
                             <p>{post.title}</p>
+                            <div style={{fontSize:'15px'}} >{post.topic.title}</div>
                             <div className='postInfo'>by: {post.user.username}</div>
                         </div>
                         
