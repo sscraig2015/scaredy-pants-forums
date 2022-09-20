@@ -1,8 +1,20 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 
-const PostList = ({allPosts, forUser}) => {
-  console.log(allPosts)
+const PostList = ({allPosts, forUser, user}) => {
+  let params = useParams()
+  let navigate = useNavigate()
+
+  function deletePost(){
+    fetch(`/posts/${params.id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-type' : 'applicaion/json'
+      }
+    })
+
+    navigate('/home')
+  }
     
 if (allPosts.length === 0){
     return(
@@ -14,12 +26,17 @@ if (allPosts.length === 0){
     )
 } else if(forUser) {
     return allPosts.map((post, key) => {
+      console.log(post, 'post')
+      console.log(user, 'user')
       return (
       <div className='commentBase'>
         <div className='postId'>{key + 1}</div>
           <div className='comment'>
               <div className='commentContent'>
                 <Link to={`/posts/${post.id}`}>{post.title}</Link>
+
+                {user.id === post.user.id? <button onClick={deletePost}>Delete Post?</button> : null}
+                
               </div>
           </div>
         </div>

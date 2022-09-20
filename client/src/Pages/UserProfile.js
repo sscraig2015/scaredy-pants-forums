@@ -28,7 +28,7 @@ const UserProfile = ({user}) => {
                 <div><button name='posts' onClick={handleClick}>Posts</button></div>
                 <div><button name='comments' onClick={handleClick}>Comments</button></div>
             </header>
-            { posts ?  <PostList allPosts={user.posts} forUser={true}/> : null }
+            { posts ?  <PostList allPosts={user.posts} forUser={true} user={user}/> : null }
             { comments ?  <UserCommentList comments={user.comments} userId={user.id}/> : null }
         </div>
             

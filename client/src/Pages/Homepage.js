@@ -44,7 +44,7 @@ const Homepage = ({user, setUser}) => {
                     {revealPostForm ? <NewPost currentPosts={currentPosts} setPosts={setPosts} revealNewPost={revealNewPost} topics={topics}/> : null}
                 </div> 
                 <div className='content'>
-                        <PostList allPosts={currentPosts} forUser={false}/>
+                        <PostList allPosts={currentPosts} forUser={false} user={user}/>
                 </div>
                
                

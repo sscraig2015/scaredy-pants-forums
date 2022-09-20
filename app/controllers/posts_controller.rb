@@ -16,6 +16,11 @@ class PostsController < ApplicationController
         render json: post, include: ['user', 'comments', 'comments.user'], status: :ok
     end
 
+    def destroy
+        @post = current_user.posts.find_by!(id: param[:id])
+        @post.delete
+    end
+
     private
 
     def user_params
