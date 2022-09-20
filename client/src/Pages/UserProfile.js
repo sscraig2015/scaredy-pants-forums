@@ -5,7 +5,7 @@ import UserCommentList from '../Components/UserCommentList'
 
 const UserProfile = ({user}) => {
  
-    console.log(user)
+
     const [posts, revealPosts] = useState(false)
     const [comments, revealComments]= useState(false)
   

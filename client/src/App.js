@@ -15,7 +15,7 @@ function App() {
 
   let navigate = useNavigate();
   const [user, setUser] = useState(null)
-  console.log(user)
+
 
    useEffect(() => {
 

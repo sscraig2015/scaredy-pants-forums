@@ -7,10 +7,6 @@ const NewPost = ({setPosts, currentPosts, revealNewPost, topics}) => {
     const [errors, setErrors] = useState()
     const [topic, setTopic] = useState()
 
-  
-
-    console.log(topics, 'topics')
-
     function newPost(e){
         e.preventDefault()
 
