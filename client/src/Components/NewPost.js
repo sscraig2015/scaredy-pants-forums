@@ -5,6 +5,9 @@ const NewPost = ({setPosts, currentPosts, revealNewPost, topics}) => {
     const [title, setTitle] = useState("")
     const [body, setBody] = useState("")
     const [errors, setErrors] = useState()
+    const [topic, setTopic] = useState()
+
+  
 
     console.log(topics, 'topics')
 
@@ -19,6 +22,7 @@ const NewPost = ({setPosts, currentPosts, revealNewPost, topics}) => {
             body: JSON.stringify({
                 title: title,
                 body: body,
+                topic_id: topic,
             })  
         })
         .then((r) => {
@@ -43,7 +47,7 @@ const NewPost = ({setPosts, currentPosts, revealNewPost, topics}) => {
               onChange={(e) => setTitle(e.target.value)}
             />
             <label>Topic</label>
-            <select name='topic' id='topic'>
+            <select onChange={(e) => {setTopic(e.target.value)}} name='topic' id='topic'>
               {topics.map((topic) => {
                 return <option value={topic.id}>{topic.title}</option>
               })}

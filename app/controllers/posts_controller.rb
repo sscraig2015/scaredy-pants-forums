@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
 
     def create
-        debugger
+        
         newUser = current_user.posts.create!(user_params)
         render json: newUser, status: :ok
     end
@@ -19,6 +19,6 @@ class PostsController < ApplicationController
     private
 
     def user_params
-        params.permit(:body, :title)
+        params.permit(:body, :title, :topic_id, :user_id)
     end
 end

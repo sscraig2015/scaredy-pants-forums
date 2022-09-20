@@ -4,5 +4,5 @@ class CommentSerializer < ActiveModel::Serializer
   belongs_to :user
   belongs_to :post
 
-  has_many :post, through: :users
+  has_many :posts, through: :users
 end
