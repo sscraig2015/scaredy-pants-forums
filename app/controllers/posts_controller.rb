@@ -2,7 +2,6 @@ class PostsController < ApplicationController
 
 
     def create
-        
         newUser = current_user.posts.create!(user_params)
         render json: newUser, status: :ok
     end
@@ -17,7 +16,8 @@ class PostsController < ApplicationController
     end
 
     def destroy
-        @post = current_user.posts.find_by!(id: param[:id])
+        
+        @post = Post.find_by!(id: params[:id])
         @post.delete
     end
 
