@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     resources :comments
   end
   resources :users
+
+  # get '/users/:id', to 'users#profile'
+  
   delete '/sessions', to: 'sessions#destroy'
   post '/login', to: 'sessions#create'
 

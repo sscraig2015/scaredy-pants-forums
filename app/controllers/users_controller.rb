@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    skip_before_action :authorize, only: [:create, :show]
+    skip_before_action :authorize, only: [:create]
     
     def create 
         user = User.create!(user_params)
@@ -20,6 +20,11 @@ class UsersController < ApplicationController
     def destroy
         current_user.destroy
         head :no_content
+    end
+
+    def profile
+        @user = User.find_by(id: params[:id])
+        render json: @user, status: :ok
     end
 
     private

@@ -1,17 +1,27 @@
-import React, {useState} from 'react'
-import { Link, NavLink } from 'react-router-dom';
+import React, {useState, useEffect} from 'react'
+import { useParams } from 'react-router-dom';
 
 import PostList from '../Components/PostList'
 import UserCommentList from '../Components/UserCommentList'
 
 const UserProfile = ({user}) => {
 
-    const uniqueTopics = [...new Set(user.topics.map(item => item.title))];
- 
-    console.log(user)
+    let params = useParams()
+
     const [posts, revealPosts] = useState(false)
     const [comments, revealComments]= useState(false)
-  
+
+    console.log(user)
+    const uniqueTopics = [...new Set(user.topics.map(item => item.title))];
+    
+
+    // useEffect(() => {
+    //     fetch(`/users/${params.id}`)
+    //     .then((r) => r.json())
+    //     .then((data) => setUser(data))
+        
+    // },[])
+    
     function handleClick(e){
         console.log(e.target.name)
         
@@ -22,7 +32,7 @@ const UserProfile = ({user}) => {
         }
 
     }
-
+if(user) {
     return (
     <div className='homePage'>
         <div className='newPostForm'>
@@ -45,6 +55,7 @@ const UserProfile = ({user}) => {
     </div> 
     
   )
+            }
 }
 
 export default UserProfile

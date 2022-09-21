@@ -36,6 +36,7 @@ const Homepage = ({user, setUser}) => {
     },[])
 
     if (user) {
+        console.log(user)
     return (
      
             <div className='homePage'>
