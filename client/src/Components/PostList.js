@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-const PostList = ({allPosts, forUser, user}) => {
+const PostList = ({allPosts, forUser, user, topics}) => {
 
 
   let navigate = useNavigate()
@@ -26,7 +26,7 @@ if (allPosts.length === 0){
         </div>
     )
 } else if(forUser) {
-    return allPosts.map((post, key) => {
+  return allPosts.map((post, key) => {
       return (
       <div className='commentBase'>
         <div className='postId'>{key + 1}</div>
