@@ -15,7 +15,7 @@ const Navbar = ({user, handleLogOut}) => {
 
         <div className='navBarCointainer'>
           
-          <NavLink to="/myProfile">{user.username}</NavLink>
+          <NavLink to={`/user/${user.id}`}>{user.username}</NavLink>
           <NavLink to="/preferences">Preferences</NavLink>
           <button className="logoutButton" onClick={handleLogOut}>Logout</button>
         </div>

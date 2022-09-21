@@ -55,7 +55,7 @@ function App() {
         <Routes>
           <Route path='*' element = { <Homepage user={user} setUser={setUser}/>} />
           <Route path='/home' element ={ <Homepage user={user} setUser={setUser}/>} />
-          <Route path='/myProfile' element={<UserProfile user={user}/>}/>
+          <Route path='/user/:id' element={<UserProfile user={user}/>}/>
           <Route path='/preferences' element={<Preferences user={user}/>}/>
           <Route path='/posts/:id' element={<PostPage user={user}/>}/>
           <Route path='/comments/:id' element={<Comment />} />
